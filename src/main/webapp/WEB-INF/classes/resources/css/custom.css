@@ -1,0 +1,10 @@
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 90% !important;
+}
+.errorItem {
+	color: red;
+}
+
+body {
+	background: black;
+}

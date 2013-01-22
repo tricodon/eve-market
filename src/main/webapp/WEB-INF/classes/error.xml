@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2011-09-10 13:50:48</currentTime>
+  <error code="222">Key has expired. Contact key owner for access renewal.</error>
+  <cachedUntil>2011-09-10 13:50:48</cachedUntil>
+</eveapi>

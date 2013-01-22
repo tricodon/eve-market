@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Eve Market</title>
+	<h:outputStylesheet name="custom.css" library="css" />
+	<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/img/policeman_german.ico" />
+</h:head>
+<h:body>
+	<h:form>
+		<p:dataTable var="order" value="#{ordersBean.marketOrders}" sortBy="#{order.issued}">
+			<f:facet name="header">
+				<h:outputText value="cached until #{ordersBean.cachedUntil}" />
+			</f:facet>
+
+			<p:column headerText="Id">
+				<h:outputText value="#{order.orderId}" />
+			</p:column>
+
+			<p:column headerText="TypeId">
+				<h:outputText value="#{order.typeName}" />
+			</p:column>
+
+			<p:column headerText="Station">
+				<h:outputText value="#{order.stationId}" />
+			</p:column>
+
+			<p:column headerText="Issued" sortBy="#{order.issued}">
+				<h:outputText value="#{order.issued}" />
+			</p:column>
+
+			<p:column headerText="Entered">
+				<h:outputText value="#{order.volEntered}" />
+			</p:column>
+
+			<p:column headerText="Remain">
+				<h:outputText value="#{order.volRemaining}" />
+			</p:column>
+
+			<p:column headerText="Min">
+				<h:outputText value="#{order.minVolume}" />
+			</p:column>
+
+			<p:column headerText="State" sortBy="#{order.orderState}">
+				<h:outputText value="#{order.orderState}" />
+			</p:column>
+
+			<p:column headerText="Range">
+				<h:outputText value="#{order.range}" />
+			</p:column>
+
+			<!-- 
+            <p:column headerText="accountKey">
+            <h:outputText value="#{order.accountKey}" />
+            </p:column>
+             -->
+
+			<p:column headerText="Dur.">
+				<h:outputText value="#{order.duration}" />
+			</p:column>
+
+			<p:column headerText="Escrow">
+				<h:outputText value="#{order.escrow}" />
+			</p:column>
+
+			<p:column headerText="Price">
+				<h:outputText value="#{order.price}" />
+			</p:column>
+
+			<p:column headerText="Bid">
+				<h:outputText value="#{order.bid}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
